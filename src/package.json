@@ -1,0 +1,41 @@
+{
+    "name": "DCMScope",
+    "main": "splash.html",
+    "version": "0.6.10",
+    "description": "NWJS/ASM.JS Powered DICOM Viewer",
+    "keywords": [ "DICOM" ],
+    "window": {
+        "toolbar": false,
+        "resizable": true,
+        "width": 1010,
+        "height": 750,
+        "min_width": 960,
+        "min_height": 650,
+        "position": "center",
+        "icon": "images/DCMScope.png",
+        "title": "DCMScope"
+    },
+    "js-flags": "--harmony",
+    "chromium-args": "--enable-threaded-compositing",
+    "webkit": {
+        "plugin": true
+    },
+    "single-instance": true,
+    "author": "A.J <@andrwj>",
+    "licenses": [
+       {
+            "type": "GPLv3",
+            "url": "https://gnu.org/licenses/gpl.html"
+       },
+       {
+            "type": "Commercial",
+            "url": "http://andrwj.com/dicomscope"
+       }
+    ],
+    "repository": "https://github.com/andrwj/dcmscope.git",
+    "maintainers":[ {
+       "name": "A.J",
+       "email": "andrwj@gmail.com",
+       "web": "http://andrwj.com/dcmscope"
+    }]
+}

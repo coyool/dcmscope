@@ -1,0 +1,89 @@
+* {
+  -webkit-user-select: none;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #1E2124;
+}
+
+#explorer-container {
+  position: absolute; left: 10px; right: 10px; top: 10px; bottom: 10px;
+}
+#explorer-favorites {
+  float: left; width: 160px; padding: 8px; background-color: #2E3136
+}
+#explorer-contents {
+  float: left; position: absolute; left: 210px; right: 0; top: 0; bottom: 50px
+}
+#explorer-finder {
+  background:#1e2124; -webkit-border-radius: 2px; margin: -5px 1px 0 -19px; height: 100%; overflow: auto
+}
+#explorer-dcm-viewer {
+
+}
+
+.files {
+  padding: 0;
+  margin: 0;
+}
+
+.file {
+  padding: 2px;
+  margin: 2px;
+  width: 125px;
+  display: inline-block;
+
+  text-align: center;
+  vertical-align: top;
+  font-size: 12px;
+}
+
+.file.focus {
+  background-color: #08C;
+  -webkit-border-radius: 4px;
+}
+
+.file .name {
+  width: 100%;
+  word-wrap: break-word;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  color: #fff;
+}
+.nav-list > li > a, .nav-list .nav-header {
+  text-shadow: 0 0 0;
+}
+
+.file.focus .name {
+  color: white;
+}
+
+.file .icon {
+  margin: auto;
+  margin-top: 0;
+}
+
+.file.focus .icon {
+  -webkit-filter: invert(20%);
+}
+
+.file .icon img {
+  width: 97%;
+}
+
+li {
+  line-height: 28px;
+}
+#files li {
+  line-height: 1.2em;
+  margin-bottom: 1.2em;
+  border: 1px solid #3c3f44;
+  border-radius: 5px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>DCMScope</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="bootstrap2/css/bootstrap.css" rel="stylesheet">
+  <link href="css/explorer.css" rel="stylesheet">
+  <style>
+        .meters {
+            margin: 5px 0 0 5px;
+            padding: 0;
+            display: none;
+        }
+        .meters p {
+          margin: 0;
+          paddin: 0;
+          line-height: 1.2em;
+        }
+        .meters span {
+            font-size: 12px;
+            color: #777777;
+        }
+        .meters span.meterValue {
+            color: #EEEEEE;
+        }
+  </style>
+</head>
+<body>
+  <div id="explorer-container">
+    <div id="explorer-favorites" class="well">
+      <ul class="nav nav-list" id="sidebar">
+        <li class="nav-header" style="padding: 10px 15px;">Favorites</li>
+        <li class="active"><a href="#" nw-path="~/"><i class="icon-white icon-home"></i> Home</a></li>
+        <li><a href="#" nw-path="~/Develops/node-webkit.applications/00-DCMScope/dcm-files"><i class="icon-book"></i>샘플 파일</a></li>
+        <li><a href="#" nw-path="~/Documents"><i class="icon-book"></i> Documents</a></li>
+        <li><a href="#" nw-path="~/Pictures"><i class="icon-picture"></i> Pictures</a></li>
+      </ul>
+    </div>
+
+    <div id="explorer-contents" >
+      <div class="row">
+        <ul id="addressbar" class="breadcrumb"></ul>
+      </div>
+      <div id="explorer-finder" class="row">
+        <div class="span3" style="overflow:auto; height: 100%; margin-left:0px;">
+          <ul style="padding-left: 0px; margin: 5px;" id="files"></ul>
+        </div>
+        <div id="explorer-dcm-viewer" class="span7">
+          <div style="overflow: hidden;">
+            <div class="meters" style="float:left; width: 190px;">
+              <p><span>Image size: </span><span id="meterImageWidth" class="meterValue"></span><span> x </span><span id="meterImageHeight" class="meterValue"></span></p>
+              <p><span>WL: </span><span class="meterValue" id="meterCenter"></span>&nbsp;<span>WW: </span><span class="meterValue" id="meterWidth"></span> <span>( </span><span class="meterValue" id="meterCurrentSeries"></span><span> / </span><span class="meterValue" id="meterTotalSeries"></span><span> )</span></p>
+              <p><span>X: </span><span id="posX" class="meterValue">0</span> <span>px  Y: </span><span id="posY" class="meterValue">0</span> <span>px Value: </span><span id="posValue" class="meterValue">999</span></p>
+            </div>
+            <div class="meters" style="float:right; margin-right: 30px; margin-bottom: 18px;">
+              <p><span class="meterValue" id="patientId"></span></p>
+              <p><span class="meterValue" id="studyDescription"></span></p>
+              <p><span class="meterValue" id="protocolName"></span></p>
+            </div>
+          </div>
+          <img id="scratch-image" src="images/blank512x512.png" style="margin:0 auto; padding:0; display:none;" />
+          <canvas id="screen" style="margin: 0 auto 0 auto; display: none;"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas id="scratch-canvas" style="margin: 0 auto; display:none;"></canvas>
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/jquery.finger.js"></script>
+<script type="text/javascript" src="js/jgestures-v0.90.1.js"></script>
+<script type="text/javascript" src="js/nanobar.js"></script>
+<script type="text/javascript" src="js/class.js"></script>
+<script type="text/javascript" src="js/dcmtk.js"></script>
+<script type="text/javascript" src="js/explorer.js"></script>
+<!-- <script type="text/javascript" src="js/dcmscope.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+ --><script type="text/javascript" src="js/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" type="text/css" href="css/reset-v2.0.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/splash.css" media="screen" />
+    <style media="screen" type="text/css">@import 'fonts/SF_Quartzite_Shaded/stylesheet.css';</style>
+    <style media="screen" type="text/css">@import 'fonts/LeagueGothic/stylesheet.css';</style>
+    <style media="screen" type="text/css">@import 'fonts/NanumFonts/stylesheet.css';</style>
+    <title>DCMScope - NWJS/ASM.JS Powered DICOM Viewer</title>
+</head>
+<body>
+<div id="splash-container" class="center">
+    <section id="splash-box">
+        <img id="logo" src="images/DCMScope.png" />
+        <p><span id="application-title"></span></p>
+        <p><span id="application-version"></span></p>
+        <p><span id="application-author"><span></span></p>
+    </section>
+</div>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery.hotkeys.js"></script>
+<script>
+$(function(){
+    var appInfo = require('./package.json');
+    $('#application-title').text(appInfo.name);
+    $('#application-version').text('v'+appInfo.version);
+    $('#application-author').text(appInfo.author);
+    var timer_auto_load, file_dcmscope_url='dcmscope.html', timeout=1500;
+    var switches = {
+        'space': function() {
+            clearTimeout(timer_auto_load);
+        },
+        'return': function() {
+            window.location.href=file_dcmscope_url;
+        }
+    };
+    for(var e in switches) {
+        $(document).on('keydown', null, e, switches[e]);
+    }
+    timer_auto_load = setTimeout(function() {
+        window.location.href=file_dcmscope_url;
+    }, timeout);
+});
+</script>
+</body>
+</html>
